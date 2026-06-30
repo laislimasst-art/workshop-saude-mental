@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop de Saúde Mental | Inscrição</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --vinho: #5c1f2e;
+    --vinho-escuro: #3d1420;
+    --rose: #d9a9a3;
+    --rose-claro: #f3e1dc;
+    --off-white: #fbf6f3;
+    --cream: #f7ece6;
+    --gold: #b88a5e;
+    --text: #3a2a2a;
+    --shadow: rgba(61, 20, 32, 0.18);
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    font-family:'Raleway', sans-serif;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(217,169,163,0.25), transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(92,31,46,0.12), transparent 50%),
+      var(--off-white);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding: 48px 16px 80px;
+  }
+
+  .wrap{
+    width:100%;
+    max-width:620px;
+  }
+
+  .card{
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 30px 60px -25px var(--shadow), 0 2px 10px rgba(61,20,32,0.06);
+    overflow:hidden;
+    border: 1px solid rgba(184,138,94,0.18);
+  }
+
+  .header{
+    background: linear-gradient(135deg, var(--vinho-escuro) 0%, var(--vinho) 55%, #7a3245 100%);
+    color: var(--off-white);
+    padding: 52px 40px 60px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .header::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06) 0, transparent 35%),
+      radial-gradient(circle at 80% 75%, rgba(255,255,255,0.05) 0, transparent 40%);
+  }
+
+  .header .eyebrow{
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight:600;
+    margin-bottom: 14px;
+    position:relative;
+  }
+
+  .header h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size: 38px;
+    line-height:1.25;
+    margin: 0 0 14px;
+    position:relative;
+  }
+
+  .header p{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:18px;
+    max-width:440px;
+    margin: 0 auto;
+    color: var(--rose-claro);
+    position:relative;
+    line-height:1.5;
+  }
+
+  .ornament{
+    width:46px;
+    height:1px;
+    background: var(--gold);
+    margin: 22px auto 0;
+    position:relative;
+  }
+
+  form{
+    padding: 44px 40px 48px;
+  }
+
+  .section-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight:600;
+    color: var(--vinho);
+    margin: 36px 0 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .section-title:first-of-type{ margin-top:0; }
+
+  .section-title::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background: linear-gradient(to right, var(--rose), transparent);
+  }
+
+  .field{
+    margin-bottom: 22px;
+  }
+
+  label{
+    display:block;
+    font-size: 13.5px;
+    font-weight:600;
+    letter-spacing:0.3px;
+    color: var(--vinho-escuro);
+    margin-bottom: 8px;
+  }
+
+  .hint{
+    font-size:12.5px;
+    color:#8a7370;
+    font-weight:400;
+    margin-top: -4px;
+    margin-bottom:8px;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  select,
+  textarea{
+    width:100%;
+    padding: 13px 16px;
+    border-radius: 12px;
+    border: 1.5px solid #e8d6cf;
+    background: var(--cream);
+    font-family:'Raleway', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    appearance:none;
+    -webkit-appearance:none;
+  }
+
+  textarea{
+    resize: vertical;
+    min-height: 90px;
+    font-family:'Raleway', sans-serif;
+  }
+
+  select{
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1L7 7L13 1' stroke='%235c1f2e' stroke-width='1.6' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+
+  input:focus, select:focus, textarea:focus{
+    outline:none;
+    border-color: var(--vinho);
+    background:#fff;
+    box-shadow: 0 0 0 4px rgba(92,31,46,0.08);
+  }
+
+  .radio-grid, .checkbox-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  @media (max-width:480px){
+    .radio-grid, .checkbox-grid{ grid-template-columns: 1fr; }
+  }
+
+  .option{
+    position:relative;
+  }
+
+  .option input{
+    position:absolute;
+    opacity:0;
+    width:0;
+    height:0;
+  }
+
+  .option label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1.5px solid #e8d6cf;
+    background: var(--cream);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    cursor:pointer;
+    transition: all 0.2s ease;
+  }
+
+  .option label::before{
+    content:"";
+    flex-shrink:0;
+    width: 17px;
+    height:17px;
+    border-radius: 5px;
+    border: 1.6px solid #c9ab9f;
+    background:#fff;
+    transition: all 0.2s ease;
+  }
+
+  .option input[type="radio"] + label::before{
+    border-radius: 50%;
+  }
+
+  .option input:checked + label{
+    border-color: var(--vinho);
+    background: linear-gradient(135deg, #fdf3f0, #f6e2dc);
+    color: var(--vinho-escuro);
+  }
+
+  .option input:checked + label::before{
+    background: var(--vinho);
+    border-color: var(--vinho);
+    box-shadow: inset 0 0 0 3px #fff;
+  }
+
+  .scale{
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+  }
+
+  .scale .option{ flex:1; }
+  .scale .option label{
+    flex-direction:column;
+    text-align:center;
+    gap:6px;
+    padding: 14px 6px 12px;
+  }
+  .scale .option label::before{ display:none; }
+  .scale .option .num{
+    font-family:'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight:600;
+    color: var(--vinho);
+  }
+  .scale .option input:checked + label{
+    background: linear-gradient(135deg, var(--vinho), var(--vinho-escuro));
+    border-color: var(--vinho-escuro);
+  }
+  .scale .option input:checked + label .num,
+  .scale .option input:checked + label .lbl{
+    color: var(--off-white);
+  }
+  .scale .lbl{
+    font-size: 10.5px;
+    text-transform:uppercase;
+    letter-spacing:0.4px;
+    color:#8a7370;
+  }
+
+  .required::after{
+    content:" *";
+    color: var(--vinho);
+  }
+
+  button[type="submit"]{
+    width:100%;
+    margin-top: 18px;
+    padding: 17px;
+    border:none;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--vinho-escuro), var(--vinho));
+    color: var(--off-white);
+    font-family:'Raleway', sans-serif;
+    font-size: 15.5px;
+    font-weight:700;
+    letter-spacing: 0.6px;
+    text-transform:uppercase;
+    cursor:pointer;
+    box-shadow: 0 14px 30px -10px rgba(92,31,46,0.55);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+
+  button[type="submit"]:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px -10px rgba(92,31,46,0.6);
+  }
+
+  button[type="submit"]:disabled{
+    opacity: 0.65;
+    cursor:not-allowed;
+    transform:none;
+  }
+
+  .footnote{
+    text-align:center;
+    font-size: 12px;
+    color:#a08884;
+    margin-top: 14px;
+  }
+
+  .msg{
+    display:none;
+    text-align:center;
+    padding: 30px 20px;
+  }
+
+  .msg.show{ display:block; }
+  form.hide{ display:none; }
+
+  .msg .icon{
+    width:64px;height:64px;
+    border-radius:50%;
+    background: linear-gradient(135deg, var(--rose), var(--vinho));
+    display:flex;align-items:center;justify-content:center;
+    margin: 0 auto 18px;
+    color:#fff;
+    font-size:28px;
+  }
+
+  .msg h2{
+    font-family:'Cormorant Garamond', serif;
+    color: var(--vinho-escuro);
+    font-size:26px;
+    margin: 0 0 10px;
+  }
+
+  .msg p{
+    color:#8a7370;
+    font-size:14.5px;
+    line-height:1.6;
+    max-width:380px;
+    margin: 0 auto;
+  }
+
+  .error-box{
+    display:none;
+    background:#fdecec;
+    border:1px solid #f3b9b9;
+    color:#9c2b2b;
+    padding:12px 16px;
+    border-radius:10px;
+    font-size:13.5px;
+    margin-bottom:20px;
+  }
+  .error-box.show{ display:block; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card">
+
+    <div class="header">
+      <div class="eyebrow">Workshop de Saúde Mental</div>
+      <h1>Um espaço para cuidar<br>de você primeiro</h1>
+      <p>Conte um pouco sobre o seu momento e garanta sua vaga na lista de interesse</p>
+      <div class="ornament"></div>
+    </div>
+
+    <form id="formWorkshop">
+
+      <div class="error-box" id="errorBox">Não foi possível enviar suas respostas agora. Verifique sua conexão e tente novamente.</div>
+
+      <div class="section-title">Sobre você</div>
+
+      <div class="field">
+        <label class="required" for="nome">Nome</label>
+        <input type="text" id="nome" name="Nome" required>
+      </div>
+
+      <div class="field">
+        <label class="required" for="whatsapp">WhatsApp (com DDD)</label>
+        <input type="tel" id="whatsapp" name="WhatsApp" placeholder="(21) 9 9999-9999" required>
+      </div>
+
+      <div class="field">
+        <label class="required" for="idade">Faixa etária</label>
+        <select id="idade" name="Faixa etária" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>18 a 24 anos</option>
+          <option>25 a 34 anos</option>
+          <option>35 a 44 anos</option>
+          <option>45 a 54 anos</option>
+          <option>55 anos ou mais</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="required">Você é mãe?</label>
+        <div class="radio-grid">
+          <div class="option">
+            <input type="radio" id="mae_sim" name="É mãe" value="Sim" required>
+            <label for="mae_sim">Sim</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="mae_nao" name="É mãe" value="Não" required>
+            <label for="mae_nao">Não</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="required" for="renda">Renda aproximada</label>
+        <select id="renda" name="Renda aproximada" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>Até R$ 1.500</option>
+          <option>R$ 1.501 a R$ 3.000</option>
+          <option>R$ 3.001 a R$ 5.000</option>
+          <option>R$ 5.001 a R$ 8.000</option>
+          <option>Acima de R$ 8.000</option>
+          <option>Prefiro não informar</option>
+        </select>
+      </div>
+
+      <div class="section-title">O seu momento atual</div>
+
+      <div class="field">
+        <label class="required">O que mais pesa no seu dia a dia hoje? (escolha quantas quiser)</label>
+        <div class="checkbox-grid">
+          <div class="option">
+            <input type="checkbox" id="p1" name="Pesos do dia a dia" value="Ansiedade">
+            <label for="p1">Ansiedade</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="p2" name="Pesos do dia a dia" value="Sobrecarga">
+            <label for="p2">Sobrecarga</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="p3" name="Pesos do dia a dia" value="Autoestima">
+            <label for="p3">Autoestima</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="p4" name="Pesos do dia a dia" value="Culpa materna">
+            <label for="p4">Culpa materna</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="p5" name="Pesos do dia a dia" value="Limites">
+            <label for="p5">Limites</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="p6" name="Pesos do dia a dia" value="Relacionamentos">
+            <label for="p6">Relacionamentos</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="p7" name="Pesos do dia a dia" value="Identidade">
+            <label for="p7">Identidade</label>
+          </div>
+          <div class="option">
+            <input type="checkbox" id="p8" name="Pesos do dia a dia" value="Autocuidado">
+            <label for="p8">Autocuidado</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="required">Como você avalia sua saúde mental hoje?</label>
+        <div class="scale">
+          <div class="option">
+            <input type="radio" id="s1" name="Nota saúde mental" value="1" required>
+            <label for="s1"><span class="num">1</span><span class="lbl">Ruim</span></label>
+          </div>
+          <div class="option">
+            <input type="radio" id="s2" name="Nota saúde mental" value="2">
+            <label for="s2"><span class="num">2</span></label>
+          </div>
+          <div class="option">
+            <input type="radio" id="s3" name="Nota saúde mental" value="3">
+            <label for="s3"><span class="num">3</span></label>
+          </div>
+          <div class="option">
+            <input type="radio" id="s4" name="Nota saúde mental" value="4">
+            <label for="s4"><span class="num">4</span></label>
+          </div>
+          <div class="option">
+            <input type="radio" id="s5" name="Nota saúde mental" value="5">
+            <label for="s5"><span class="num">5</span><span class="lbl">Ótima</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="required">Você já fez terapia?</label>
+        <div class="radio-grid">
+          <div class="option">
+            <input type="radio" id="t1" name="Já fez terapia" value="Sim, faço atualmente" required>
+            <label for="t1">Sim, faço atualmente</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="t2" name="Já fez terapia" value="Já fiz, mas parei">
+            <label for="t2">Já fiz, mas parei</label>
+          </div>
+          <div class="option">
+            <input type="radio" id="t3" name="Já fez terapia" value="Nunca fiz">
+            <label for="t3">Nunca fiz</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">Sobre o workshop</div>
+
+      <div class="field">
+        <label class="required" for="tema">Qual tema mais te interessa?</label>
+        <select id="tema" name="Tema de interesse" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>Ansiedade e sobrecarga mental</option>
+          <option>Autoestima e autoimagem</option>
+          <option>Culpa materna</option>
+          <option>Limites e relacionamentos</option>
+          <option>Reconexão com a própria identidade</option>
+          <option>Autocuidado na rotina real</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="required" for="valor">Quanto você pagaria por um workshop online de 1h30?</label>
+        <select id="valor" name="Quanto pagaria" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>Até R$ 30</option>
+          <option>R$ 31 a R$ 60</option>
+          <option>R$ 61 a R$ 100</option>
+          <option>Acima de R$ 100</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="required" for="horario">Qual horário funciona melhor para você?</label>
+        <select id="horario" name="Horário preferido" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>Manhã (até 12h)</option>
+          <option>Tarde (12h às 18h)</option>
+          <option>Noite (após 18h)</option>
+          <option>Fim de semana</option>
+        </select>
+      </div>
+
+      <div class="section-title">Para finalizar</div>
+
+      <div class="field">
+        <label for="conheceu" class="required">Como você me conheceu?</label>
+        <select id="conheceu" name="Como conheceu" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>Instagram</option>
+          <option>Indicação de amiga</option>
+          <option>Google</option>
+          <option>Outra rede social</option>
+          <option>Outro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="aberto">Quer compartilhar mais alguma coisa? (opcional)</label>
+        <div class="hint">Fique à vontade para escrever o que sentir</div>
+        <textarea id="aberto" name="Mensagem"></textarea>
+      </div>
+
+      <button type="submit" id="btnSubmit">Quero me inscrever</button>
+      <div class="footnote">Suas respostas são confidenciais e usadas apenas para organizar o workshop</div>
+    </form>
+
+    <div class="msg" id="msgSucesso">
+      <div class="icon">&#10003;</div>
+      <h2>Recebido com carinho</h2>
+      <p>Obrigada por compartilhar um pouco do seu momento. Em breve você vai receber novidades sobre o workshop no seu WhatsApp.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ===================================================================
+  // COLE AQUI A URL DO SEU GOOGLE APPS SCRIPT (passo a passo abaixo)
+  // ===================================================================
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzXvWE-iXnau_r-5Jkelgmu7JwLLCfMnoS5mSIupGWxsgT_bpoTl77OaZB0e0ScDWZ_oA/exec
+";
+
+  const form = document.getElementById('formWorkshop');
+  const btn = document.getElementById('btnSubmit');
+  const errorBox = document.getElementById('errorBox');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorBox.classList.remove('show');
+
+    if (SCRIPT_URL.indexOf('COLE_AQUI') !== -1){
+      errorBox.textContent = 'O formulário ainda não foi conectado à planilha. Siga o passo a passo para colar a URL do Apps Script.';
+      errorBox.classList.add('show');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const formData = new FormData(form);
+    formData.append('Data do envio', new Date().toLocaleString('pt-BR'));
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    })
+    .then(function(){
+      form.classList.add('hide');
+      document.getElementById('msgSucesso').classList.add('show');
+    })
+    .catch(function(){
+      errorBox.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = 'Quero me inscrever';
+    });
+  });
+</script>
+
+</body>
+</html>
